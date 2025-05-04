@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vitalia Shop</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#3d9970" />
+  <style>
+    :root {
+      --primary: #3d9970;
+      --text-light: white;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      line-height: 1.6;
+    }
+    header {
+      background: var(--primary);
+      color: var(--text-light);
+      padding: 1rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: 1.8rem;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .product {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .product:hover {
+      transform: scale(1.03);
+    }
+    .product img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .product h3 {
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+    }
+    .price {
+      color: var(--primary);
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+    .btn {
+      background: var(--primary);
+      color: var(--text-light);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn:hover {
+      background: #2c7a57;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Vitalia Shop</h1>
+    <p>Salud, Belleza, Moda y Tecnología para tu Bienestar</p>
+  </header>
+
+  <div class="container">
+    <div class="product">
+      <img src="https://i.imgur.com/3y0D1KM.jpg" alt="Vitaminas Naturales">
+      <h3>Vitaminas Naturales</h3>
+      <p class="price">$12.99</p>
+      <a href="https://wa.me/1234567890?text=Hola, estoy interesado/a en las Vitaminas Naturales" class="btn" target="_blank">Comprar</a>
+    </div>
+
+    <div class="product">
+      <img src="https://i.imgur.com/WzJ7xXC.jpg" alt="Crema Facial Hidratante">
+      <h3>Crema Facial Hidratante</h3>
+      <p class="price">$8.49</p>
+      <a href="https://wa.me/1234567890?text=Hola, estoy interesado/a en la Crema Facial Hidratante" class="btn" target="_blank">Comprar</a>
+    </div>
+
+    <div class="product">
+      <img src="https://i.imgur.com/YvS0CwE.jpg" alt="Audífonos Inalámbricos">
+      <h3>Audífonos Inalámbricos</h3>
+      <p class="price">$19.99</p>
+      <a href="https://wa.me/1234567890?text=Hola, estoy interesado/a en los Audífonos Inalámbricos" class="btn" target="_blank">Comprar</a>
+    </div>
+
+    <div class="product">
+      <img src="https://i.imgur.com/xPdvSEN.jpg" alt="Set de Moda Casual">
+      <h3>Set de Moda Casual</h3>
+      <p class="price">$24.95</p>
+      <a href="https://wa.me/1234567890?text=Hola, estoy interesado/a en el Set de Moda Casual" class="btn" target="_blank">Comprar</a>
+    </div>
+  </div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('Service Worker registrado'))
+        .catch(err => console.error('Error al registrar Service Worker:', err));
+    }
